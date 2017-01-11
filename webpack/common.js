@@ -1,6 +1,5 @@
 const path = require('path');
 const webpack = require('webpack');
-
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
@@ -11,7 +10,7 @@ module.exports = {
   entry: {
     client: './src/main.js',
     common: [
-      'react'
+      'react',
     ],
   },
   output: {
@@ -47,11 +46,11 @@ module.exports = {
         exclude: /(node_modules|bower_components)/,
         loader: 'babel-loader',
         query: {
-          presets: ['es2016'],
+          presets: ['es2015'],
           plugins: [
-            "transform-react-jsx"
-          ]
-        }
+            'transform-react-jsx',
+          ],
+        },
       },
       {
         test: /\.scss$/,

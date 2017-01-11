@@ -1,6 +1,5 @@
 const webpack = require('webpack');
 const webpackMerge = require('webpack-merge');
-const NgAnnotatePlugin = require('ng-annotate-webpack-plugin');
 const commonConfig = require('./common');
 
 /**
@@ -60,17 +59,6 @@ module.exports = webpackMerge(commonConfig, {
     new webpack.optimize.AggressiveMergingPlugin({
       minSizeReduce: 1.5,
       moveToParents: true,
-    }),
-
-    /**
-     * Plugin: NgAnnotatePlugin
-     * Description: Angular annotate for dependancy injection.
-     * ngAnnotate automaticly add annonations in $inject
-     *
-     * See: https://github.com/jeffling/ng-annotate-webpack-plugin
-     */
-    new NgAnnotatePlugin({
-      add: true,
     }),
 
     /**

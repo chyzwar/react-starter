@@ -99,7 +99,7 @@ module.exports = {
         },
       },
       {
-        test: /\.svg$/,
+        test: /\.(png|jpg|svg)$/,
         loader: 'url-loader',
         query: { limit: 10000, minetype: 'image/svg+xml' },
       },

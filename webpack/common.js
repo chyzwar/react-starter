@@ -49,6 +49,7 @@ module.exports = {
           presets: ['es2015'],
           plugins: [
             'transform-react-jsx',
+            'transform-class-properties',
           ],
         },
       },

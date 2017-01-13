@@ -32,6 +32,22 @@ module.exports = webpackMerge(commonConfig, {
    */
   devtool: 'source-map',
 
+  module: {
+    loaders: [{
+      test: /\.js$/,
+      exclude: /(node_modules|bower_components)/,
+      loader: 'babel-loader',
+      query: {
+        presets: ['es2015', 'babili'],
+        plugins: [
+          'transform-react-jsx',
+          'transform-class-properties',
+        ],
+      },
+    },
+    ],
+  },
+
   /**
    * Add additional plugins to the compiler.
    *
@@ -62,39 +78,14 @@ module.exports = webpackMerge(commonConfig, {
     }),
 
     /**
-     * Plugin: UglifyJsPlugin
-     * Description: Minimize all JavaScript output of chunks.
-     *
-     * UglifyJs is broken for es6: https://github.com/mishoo/UglifyJS2/issues/448
-     * See: https://webpack.github.io/docs/list-of-plugins.html#uglifyjsplugin
-     *
-     * Lit of options for compress:
-     * See: https://github.com/mishoo/UglifyJS2#usage
-     */
-    new webpack.optimize.UglifyJsPlugin({
-      compress: {
-        warnings: true,
-        passes: 2,
-        drop_console: true,
-        beautify: false,
-        comments: false,
-        screw_ie8: true,
-        keep_fnames: true,
-        drop_debugger: false,
-        dead_code: false,
-        unused: false,
-      },
-      mangle: {
-        screw_ie8: true,
-      },
-    }),
-    /**
      * Plugin: DefinePlugin
      * Define variables, strigify in source code
      * @type {String}
      */
     new webpack.DefinePlugin({
-      NODE_ENV: 'production',
+      'process.env': {
+        NODE_ENV: '"production"',
+      },
     }),
   ],
 });

@@ -52,10 +52,12 @@
     "html-webpack-plugin": "*",
     "extract-text-webpack-plugin": "^2.0.0-beta",
 
+    "babili": "*",
     "babel-core": "*",
     "babel-preset-es2015": "*",
     "babel-plugin-transform-react-jsx": "*",
-    "babel-plugin-transform-class-properties": "*"
+    "babel-plugin-transform-class-properties": "*",
+    "babel-plugin-transform-object-rest-spread": "*"
   },
   "dependencies": {
     "react": "15.x.x",

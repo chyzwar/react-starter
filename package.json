@@ -1,5 +1,5 @@
 {
-  "name": "webpack-starter-react",
+  "name": "react-starter",
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
@@ -28,7 +28,7 @@
   ],
   "author": "Marcin Kopacz",
   "license": "MIT",
-  "repository": "https://github.com/Chyzwar/webpack-starter-react",
+  "repository": "https://github.com/Chyzwar/react-starter",
   "devDependencies": {
     "eslint": "3.13.x",
     "eslint-config-airbnb": "14.0.x",
@@ -46,9 +46,9 @@
     "url-loader": "*",
     "file-loader": "*",
 
-    "webpack": "^2.2.0-rc",
+    "webpack": "2.2.x",
     "webpack-merge": "*",
-    "webpack-dev-server": "^2.2.0-rc",
+    "webpack-dev-server": "2.x.x",
     "html-webpack-plugin": "*",
     "extract-text-webpack-plugin": "^2.0.0-beta",
 

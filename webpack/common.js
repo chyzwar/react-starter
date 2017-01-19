@@ -1,10 +1,15 @@
 const path = require('path');
+
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
-const extractApp = new ExtractTextPlugin({ filename: 'styles/app.[hash].css' });
-const extractVendor = new ExtractTextPlugin({ filename: 'styles/vendor.[hash].css' });
+const extractApp = new ExtractTextPlugin({
+  filename: 'styles/app.[hash].css',
+});
+const extractLib = new ExtractTextPlugin({
+  filename: 'styles/lib.[hash].css',
+});
 
 module.exports = {
   entry: {
@@ -50,6 +55,7 @@ module.exports = {
           plugins: [
             'transform-react-jsx',
             'transform-class-properties',
+            'transform-object-rest-spread',
           ],
         },
       },
@@ -62,7 +68,7 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        loader: extractVendor.extract([
+        loader: extractLib.extract([
           { loader: 'css-loader',
             query: {
               sourceMap: true,
@@ -116,7 +122,7 @@ module.exports = {
      * Vandor CSS like ui-grid will be linked as CSS
      */
     extractApp,
-    extractVendor,
+    extractLib,
 
     /**
      * HtmlWebpackPlugin configuration

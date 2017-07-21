@@ -1,88 +1,103 @@
 const path = require('path');
-
 const webpack = require('webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
-const extractApp = new ExtractTextPlugin({
-  filename: 'styles/app.[hash].css',
-});
-const extractLib = new ExtractTextPlugin({
-  filename: 'styles/lib.[hash].css',
-});
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
+
 
 module.exports = {
+  /**
+   * The point or points to enter the application.
+   *
+   * @see https://webpack.js.org/configuration/entry-context/#entry
+   */
   entry: {
-    client: './src/main.js',
-    common: [
-      'react',
-    ],
+    /**
+     * Angualar Application main entry point
+     */
+    main: './src/main.js'
   },
   output: {
     /**
      * The output directory as absolute path (required).
      *
-     * See: http://webpack.github.io/docs/configuration.html#output-path
+     * @see: https://webpack.js.org/configuration/output/#output-path
      */
-    path: path.join(__dirname, './build/'),
+    path: path.resolve('build'),
     /**
      * Specifies the name of each output file on disk.
      *
-     * See: http://webpack.github.io/docs/configuration.html#output-filename
+     * @see: https://webpack.js.org/configuration/output/#output-filename
      */
-    filename: 'js/[name].[hash].js',
+    filename: '[name].[hash].js',
     /**
-     * The filename of the SourceMaps for the JavaScript files.
-     * They are inside the output.path directory.
+     * Configure how source maps are named
      *
-     * See: http://webpack.github.io/docs/configuration.html#output-sourcemapfilename
+     * @see: https://webpack.js.org/configuration/output/#output-sourcemapfilename
      */
-    sourceMapFilename: 'js/[name].[hash].map',
+    sourceMapFilename: '[name].[hash].map',
   },
   resolve: {
-    modules: ['node_modules'],
-    extensions: ['.js'],
+    /**
+     * Roots for module resolution
+     *
+     * @see: https://webpack.js.org/configuration/resolve/#resolve-modules
+     */
+    modules: [
+      path.resolve('node_modules'),
+      path.resolve('src'),
+    ],
+
+    /**
+    * An array of extensions that should be used to resolve modules.
+    *
+    * @see: https://webpack.js.org/configuration/resolve/#resolve-extensions
+    */
+    extensions: ['.js', '.jsx', '.json', '.html', '.css', '.scss'],
   },
   target: 'web',
   module: {
     loaders: [
       {
-        test: /\.js$/,
-        exclude: /(node_modules|bower_components)/,
+        test: /(\.jsx|\.js)$/,
         loader: 'babel-loader',
+        exclude: /node_modules/,
         query: {
-          presets: ['es2015'],
-          plugins: [
-            'transform-react-jsx',
-            'transform-class-properties',
-            'transform-object-rest-spread',
-          ],
-        },
+          presets: [
+            'es2015',
+            'es2016',
+            'es2017',
+            'react',
+          ]
+        }
       },
       {
         test: /\.scss$/,
-        loader: extractApp.extract([
-          { loader: 'css-loader', query: { sourceMap: true } },
-          { loader: 'sass-loader', query: { sourceMap: true } },
-        ]),
+        use: [
+          {loader: 'raw-loader'},
+          {loader: 'sass-loader'}
+        ]
       },
       {
         test: /\.css$/,
-        loader: extractLib.extract([
-          { loader: 'css-loader',
-            query: {
-              sourceMap: true,
-              minimize: true,
-            },
-          },
-        ]),
+        use: ExtractTextPlugin.extract(
+          {
+            fallback: "style-loader",
+            use: "css-loader"
+          }
+        )
+      },
+      {
+        test: /\.html$/,
+        loader: 'html-loader',
       },
       {
         test: /\.eot$/,
         loader: 'url-loader',
         query: {
           limit: 65000,
-          name: 'fonts/[name].[hash].[ext]',
+          name: '[name].[hash].[ext]',
           minetype: 'application/vnd.ms-fontobject',
         },
       },
@@ -91,7 +106,7 @@ module.exports = {
         loader: 'url-loader',
         query: {
           limit: 65000,
-          name: 'fonts/[name].[hash].[ext]',
+          name: '[name].[hash].[ext]',
           mimetype: 'application/font-woff',
         },
       },
@@ -100,32 +115,34 @@ module.exports = {
         loader: 'url-loader',
         query: {
           limit: 65000,
-          name: 'fonts/[name].[hash].[ext]',
+          name: '[name].[hash].[ext]',
           minetype: 'application/x-font-ttf',
         },
       },
       {
-        test: /\.(png|jpg|svg)$/,
+        test: /\.svg$/,
         loader: 'url-loader',
         query: { limit: 10000, minetype: 'image/svg+xml' },
-      },
-      {
-        test: /\.html$/,
-        loader: 'raw-loader',
       },
     ],
   },
   plugins: [
+    new ExtractTextPlugin("styles.[hash].css"),
     /**
-     * Register extract CSS and SCSS plugins,
-     * Assume that application style will be written on sass
-     * Vandor CSS like ui-grid will be linked as CSS
-     */
-    extractApp,
-    extractLib,
-
+    * Plugin: CopyWebpackPlugin
+    * Description: Copy files and directories in webpack.
+    *
+    * Copies project static assets.
+    *
+    * See: https://www.npmjs.com/package/copy-webpack-plugin
+    */
+    new CopyWebpackPlugin([
+      { from: 'src/assets', to: 'assets' },
+    ]),
     /**
      * HtmlWebpackPlugin configuration
+     *
+     * @see https://webpack.js.org/plugins/html-webpack-plugin/
      */
     new HtmlWebpackPlugin({
       title: 'Webpack Starter Angular',
@@ -142,12 +159,12 @@ module.exports = {
      * All modules from common entry will be extracted, also
      * If module is shared by 2 childrens it will get extracted to commons.
      *
-     * See: https://webpack.github.io/docs/list-of-plugins.html#commonschunkplugin
+     * @see: https://webpack.js.org/plugins/commons-chunk-plugin/
     */
     new webpack.optimize.CommonsChunkPlugin({
       name: 'common',
       minChunks: 2,
-      filename: 'js/common.[hash].js',
+      filename: 'common.[hash].js',
     }),
   ],
 };

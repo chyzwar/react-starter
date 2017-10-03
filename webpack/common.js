@@ -3,7 +3,7 @@ const webpack = require('webpack');
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 
 module.exports = {
@@ -16,7 +16,7 @@ module.exports = {
     /**
      * Angualar Application main entry point
      */
-    main: './src/main.js'
+    main: './src/main.js',
   },
   output: {
     /**
@@ -69,24 +69,24 @@ module.exports = {
             'es2016',
             'es2017',
             'react',
-          ]
-        }
+          ],
+        },
       },
       {
         test: /\.scss$/,
         use: [
-          {loader: 'raw-loader'},
-          {loader: 'sass-loader'}
-        ]
+          { loader: 'raw-loader' },
+          { loader: 'sass-loader' },
+        ],
       },
       {
         test: /\.css$/,
         use: ExtractTextPlugin.extract(
           {
-            fallback: "style-loader",
-            use: "css-loader"
-          }
-        )
+            fallback: 'style-loader',
+            use: 'css-loader'
+          },
+        ),
       },
       {
         test: /\.html$/,
@@ -127,7 +127,7 @@ module.exports = {
     ],
   },
   plugins: [
-    new ExtractTextPlugin("styles.[hash].css"),
+    new ExtractTextPlugin('styles.[hash].css'),
     /**
     * Plugin: CopyWebpackPlugin
     * Description: Copy files and directories in webpack.

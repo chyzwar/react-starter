@@ -2,13 +2,13 @@
   "name": "react-starter",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "main.js",
   "scripts": {
     "start": "webpack-dev-server --config ./webpack/dev",
     "start:build": "webpack-dev-server --config ./webpack/prod",
 
     "build": "webpack --config ./webpack/prod",
-    "eslint": "eslint ./src"
+    "build:watch": "webpack --config ./webpack/prod --watch"
   },
   "keywords": [
     "starter",
@@ -22,7 +22,7 @@
   "repository": "https://github.com/chyzwar/react-starter",
   "devDependencies": {
     "eslint": "3.19.x",
-    "eslint-config-airbnb": "15.0.x",
+    "eslint-config-airbnb": "15.x.x",
     "eslint-plugin-react": "7.1.x",
     "eslint-plugin-jsx-a11y": "5.1.x",
     "eslint-plugin-import": "2.7.x",
@@ -40,7 +40,7 @@
     "webpack": "3.x.x",
     "webpack-merge": "4.x.x",
     "webpack-dev-server": "2.x.x",
-    "html-webpack-plugin": "*",
+    "html-webpack-plugin": "2.x.x",
     "copy-webpack-plugin": "4.x.x",
     "clean-webpack-plugin": "0.1.x",
     "extract-text-webpack-plugin": "3.x.x",
@@ -52,12 +52,10 @@
   },
   "dependencies": {
     "react": "16.x.x",
-    "react-dom": "15.x.x",
-    "redbox-react": "*",
-    "react-props": "15.x.x",
+    "react-dom": "16.x.x",
     "react-redux": "5.x.x",
     "react-router": "3.x.x",
-    "redux": "3.7.x",
-    "redux-saga": "0.x.x"
+    "prop-types": "15.x.x",
+    "redux": "3.x.x"
   }
 }

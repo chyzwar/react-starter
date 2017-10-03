@@ -1,5 +1,6 @@
 const webpack = require('webpack');
 const webpackMerge = require('webpack-merge');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 const commonConfig = require('./common.js');
 const path = require('path');
 
@@ -26,40 +27,61 @@ module.exports = env => webpackMerge(commonConfig, {
      * @see https://webpack.js.org/configuration/dev-server/
      */
   devServer: {
-    contentBase: path.resolve('build'),
+    contentBase: path.resolve('dist'),
     compress: true,
     port: 3000,
-    hot: false,
-    inline: false,
+    hot: true,
+    inline: true,
   },
-    /**
-     * Add additional plugins to the compiler.
-     *
-     * @see https://webpack.js.org/configuration/plugins/#plugins
-     */
+  /**
+   * Add additional plugins to the compiler.
+   *
+   * @see https://webpack.js.org/configuration/plugins/#plugins
+   */
   plugins: [
-      /**
-       * Plugin: UglifyJsPlugin
-       * Description: Minimize all JavaScript output of chunks.
-       *
-       * @see https://github.com/webpack-contrib/uglifyjs-webpack-plugin
-       */
+    /**
+     * Plugin CleanWebpackPlugin
+     * Description: Cleadn dist folder.
+     *
+     * @see https://github.com/johnagan/clean-webpack-plugin
+     */
+    new CleanWebpackPlugin(
+      ['dist'],
+      { root: path.resolve(), verbose: true },
+    ),
+    /**
+     * Plugin: UglifyJsPlugin
+     * Description: Minimize all JavaScript output of chunks.
+     *
+     * @see https://github.com/webpack-contrib/uglifyjs-webpack-plugin
+     */
     new webpack.optimize.UglifyJsPlugin({
       beautify: false,
+      output: {
+        comments: false
+      },
       mangle: {
-        screw_ie8: true,
-        keep_fnames: true,
+        screw_ie8: true
       },
       compress: {
         screw_ie8: true,
-      },
-      comments: false,
+        warnings: false,
+        conditionals: true,
+        unused: true,
+        comparisons: true,
+        sequences: true,
+        dead_code: true,
+        evaluate: true,
+        if_return: true,
+        join_vars: true,
+        negate_iife: false
+      }
     }),
-      /**
-       * Plugin: DefinePlugin strigify in source code
-       *
-       * @see https://webpack.js.org/plugins/define-plugin/
-       */
+    /**
+     * Plugin: DefinePlugin strigify in source code
+     *
+     * @see https://webpack.js.org/plugins/define-plugin/
+     */
     new webpack.DefinePlugin({
       NODE_ENV: JSON.stringify('production'),
     }),

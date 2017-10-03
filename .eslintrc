@@ -1,31 +1,24 @@
 {
-  env: {
+  "env": {
     "browser": true,
     "node": true,
     "es6": true
   },
 
-  parserOptions: {
+  "parserOptions": {
     "sourceType": "module",
     "ecmaVersion": 6,
     "ecmaFeatures": {
-      modules: true,
-      jsx: true
+      "modules": true,
+      "jsx": true
     }
   },
 
   "globals" : {
-    "expect"     : false,
-    "describe"   : false,
-    "it"         : false,
-    "before"     : false,
-    "beforeEach" : false,
-    "after"      : false,
-    "afterEach"  : false,
-    "inject"     : false
+
   },
 
   "extends": "airbnb",
 
-  "rules": {},
+  "rules": {}
 }

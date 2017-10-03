@@ -1,0 +1,13 @@
+{
+  "presets": [
+    ["env", {
+      "modules": false,
+      "targets": {
+        "chrome": 52,
+        "ie": 11
+      }
+    }],
+    "react",
+    "flow"
+  ]
+}

@@ -1,9 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
-
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 
 module.exports = {
@@ -45,8 +43,7 @@ module.exports = {
      * @see: https://webpack.js.org/configuration/resolve/#resolve-modules
      */
     modules: [
-      path.resolve('node_modules'),
-      path.resolve('src'),
+      path.resolve('node_modules')
     ],
 
     /**
@@ -54,7 +51,7 @@ module.exports = {
     *
     * @see: https://webpack.js.org/configuration/resolve/#resolve-extensions
     */
-    extensions: ['.js', '.jsx', '.json', '.html', '.css', '.scss'],
+    extensions: ['.js', '.jsx'],
   },
   target: 'web',
   module: {
@@ -63,30 +60,20 @@ module.exports = {
         test: /(\.jsx|\.js)$/,
         loader: 'babel-loader',
         exclude: /node_modules/,
-        query: {
-          presets: [
-            'es2015',
-            'es2016',
-            'es2017',
-            'react',
-          ],
-        },
       },
       {
         test: /\.scss$/,
         use: [
           { loader: 'raw-loader' },
-          { loader: 'sass-loader' },
+          { loader: 'sass-loader'},
         ],
       },
       {
         test: /\.css$/,
-        use: ExtractTextPlugin.extract(
-          {
-            fallback: 'style-loader',
-            use: 'css-loader'
-          },
-        ),
+        use: [
+          'style-loader',
+          'css-loader',
+        ],
       },
       {
         test: /\.html$/,

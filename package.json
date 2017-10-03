@@ -23,6 +23,7 @@
   "devDependencies": {
     "eslint": "3.19.x",
     "eslint-config-airbnb": "15.x.x",
+    "eslint-plugin-flowtype": "2.x.x",
     "eslint-plugin-react": "7.1.x",
     "eslint-plugin-jsx-a11y": "5.1.x",
     "eslint-plugin-import": "2.7.x",
@@ -36,6 +37,7 @@
     "style-loader": "*",
     "url-loader": "*",
     "file-loader": "*",
+    "eslint-loader": "*",
 
     "webpack": "3.x.x",
     "webpack-merge": "4.x.x",

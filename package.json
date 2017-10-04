@@ -26,7 +26,6 @@
     "eslint-plugin-react": "7.1.x",
     "eslint-plugin-jsx-a11y": "5.1.x",
     "eslint-plugin-import": "2.7.x",
-
     "babel-loader": "*",
     "html-loader": "*",
     "node-sass": "*",
@@ -38,7 +37,6 @@
     "url-loader": "*",
     "file-loader": "*",
     "eslint-loader": "*",
-
     "webpack": "3.x.x",
     "webpack-merge": "4.x.x",
     "webpack-dev-server": "2.x.x",
@@ -46,7 +44,6 @@
     "copy-webpack-plugin": "4.x.x",
     "clean-webpack-plugin": "0.1.x",
     "extract-text-webpack-plugin": "3.x.x",
-
     "babel-core": "next",
     "babel-preset-env": "next",
     "babel-preset-flow": "next",
@@ -59,7 +56,8 @@
     "react-redux": "5.x.x",
     "react-router": "4.x.x",
     "react-router-redux": "next",
-    "react-router-dom": "next",
-    "redux": "3.x.x"
+    "react-router-dom": "*",
+    "redux": "3.x.x",
+    "history": "4.x.x"
   }
 }

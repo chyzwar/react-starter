@@ -43,7 +43,7 @@ module.exports = {
      * @see: https://webpack.js.org/configuration/resolve/#resolve-modules
      */
     modules: [
-      path.resolve('node_modules')
+      path.resolve('node_modules'),
     ],
 
     /**
@@ -58,14 +58,17 @@ module.exports = {
     loaders: [
       {
         test: /(\.jsx|\.js)$/,
-        loader: 'babel-loader',
         exclude: /node_modules/,
+        use: [
+          'babel-loader',
+          'eslint-loader',
+        ],
       },
       {
         test: /\.scss$/,
         use: [
           { loader: 'raw-loader' },
-          { loader: 'sass-loader'},
+          { loader: 'sass-loader' },
         ],
       },
       {
@@ -114,7 +117,6 @@ module.exports = {
     ],
   },
   plugins: [
-    new ExtractTextPlugin('styles.[hash].css'),
     /**
     * Plugin: CopyWebpackPlugin
     * Description: Copy files and directories in webpack.

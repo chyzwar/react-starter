@@ -10,7 +10,7 @@ const store = createStore(
     router: routerReducer,
   }),
   applyMiddleware(
-    routerMiddleware(browserHistory)
+    routerMiddleware(browserHistory),
   ),
 );
 

@@ -134,8 +134,8 @@ module.exports = {
      * @see https://webpack.js.org/plugins/html-webpack-plugin/
      */
     new HtmlWebpackPlugin({
-      title: 'Webpack Starter Angular',
-      template: 'src/index.html',
+      title: 'React Starter',
+      template: 'src/templates/index.html',
       minify: {
         collapseWhitespace: true,
         removeComments: true,

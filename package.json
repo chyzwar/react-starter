@@ -6,8 +6,9 @@
   "scripts": {
     "start": "webpack-dev-server --config ./webpack/dev",
     "start:build": "webpack-dev-server --config ./webpack/prod",
-    "build": "webpack --config ./webpack/prod",
-    "build:watch": "webpack --config ./webpack/prod --watch"
+
+    "build": "webpack --config ./webpack/prod -p",
+    "build:watch": "webpack --config ./webpack/prod -p --watch"
   },
   "keywords": [
     "starter",
@@ -46,6 +47,7 @@
     "copy-webpack-plugin": "4.x.x",
     "clean-webpack-plugin": "0.x.x",
     "extract-text-webpack-plugin": "3.x.x",
+    "webpack-bundle-analyzer": "2.x.x",
 
     "babel-core": "next",
     "babel-eslint": "8.x.x",

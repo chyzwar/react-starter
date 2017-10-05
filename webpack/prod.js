@@ -1,38 +1,26 @@
+const path = require('path');
 const webpack = require('webpack');
 const webpackMerge = require('webpack-merge');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const commonConfig = require('./common.js');
-const path = require('path');
 
 /**
  * Merge common config with prod specific configuration
  */
-module.exports = env => webpackMerge(commonConfig, {
-    /**
-     * Disable in-memmory budles/files
-     */
+module.exports = webpackMerge(commonConfig, {
+  /**
+   * Disable in-memmory budles/files
+   */
   cache: false,
-    /**
-     * Developer tool to enhance debugging.
-     *
-     * The 'source-map' settings is meant to be used in production only. It
-     * splits the source map in a separate file and it is slow to compute.
-     *
-     * @see https://webpack.js.org/configuration/devtool/
-     */
+  /**
+   * Developer tool to enhance debugging.
+   *
+   * The 'source-map' settings is meant to be used in production only. It
+   * splits the source map in a separate file and it is slow to compute.
+   *
+   * @see https://webpack.js.org/configuration/devtool/
+   */
   devtool: 'source-map',
-    /**
-     * DevServer for production build only serve
-     *
-     * @see https://webpack.js.org/configuration/dev-server/
-     */
-  devServer: {
-    contentBase: path.resolve('dist'),
-    compress: true,
-    port: 3000,
-    hot: true,
-    inline: true,
-  },
   /**
    * Add additional plugins to the compiler.
    *
@@ -56,12 +44,13 @@ module.exports = env => webpackMerge(commonConfig, {
      * @see https://github.com/webpack-contrib/uglifyjs-webpack-plugin
      */
     new webpack.optimize.UglifyJsPlugin({
+      sourceMap: true,
       beautify: false,
       output: {
-        comments: false
+        comments: false,
       },
       mangle: {
-        screw_ie8: true
+        screw_ie8: true,
       },
       compress: {
         screw_ie8: true,
@@ -74,8 +63,8 @@ module.exports = env => webpackMerge(commonConfig, {
         evaluate: true,
         if_return: true,
         join_vars: true,
-        negate_iife: false
-      }
+        negate_iife: false,
+      },
     }),
     /**
      * Plugin: DefinePlugin strigify in source code

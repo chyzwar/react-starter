@@ -49,6 +49,9 @@
     "extract-text-webpack-plugin": "3.x.x",
     "webpack-bundle-analyzer": "2.x.x",
 
+    "jest":"21.x.x",
+    "enzyme": "3.x.x",
+
     "babel-core": "next",
     "babel-eslint": "8.x.x",
     "babel-preset-env": "next",

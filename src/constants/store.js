@@ -1,8 +1,8 @@
 import applyMiddleware from 'redux/lib/applyMiddleware';
 import combineReducers from 'redux/lib/combineReducers';
 import createStore from 'redux/lib/createStore';
-import routerMiddleware from 'react-router-redux/es/middleware';
-import routerReducer from 'react-router-redux/es/reducer';
+
+import { routerReducer, routerMiddleware } from 'react-router-redux';
 import browserHistory from './history';
 
 const store = createStore(

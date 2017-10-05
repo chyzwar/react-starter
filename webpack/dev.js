@@ -26,7 +26,7 @@ module.exports = webpackMerge(commonConfig, {
   devServer: {
     contentBase: path.resolve('build'),
     compress: true,
-    port: 3000,
+    port: 4000,
     hot: true,
     inline: true,
   },

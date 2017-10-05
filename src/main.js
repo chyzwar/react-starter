@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+import { ConnectedRouter } from 'react-router-redux';
 import { Provider } from 'react-redux';
 import { Route } from 'react-router';
-import { ConnectedRouter } from 'react-router-redux';
 
 import history from './constants/history';
 import store from './constants/store';
@@ -22,7 +22,6 @@ ReactDOM.render(
           component={Viewer}
         />
         <Route
-          exact
           path="/create"
           component={Create}
         />

@@ -29,12 +29,12 @@ module.exports = webpackMerge(commonConfig, {
   plugins: [
     /**
      * Plugin CleanWebpackPlugin
-     * Description: Cleadn dist folder.
+     * Description: Cleadn build folder.
      *
      * @see https://github.com/johnagan/clean-webpack-plugin
      */
     new CleanWebpackPlugin(
-      ['dist'],
+      ['build'],
       { root: path.resolve(), verbose: true },
     ),
     /**

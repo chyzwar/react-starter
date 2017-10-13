@@ -4,7 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 
-module.exports  = {
+module.exports = {
   /**
    * The point or points to enter the application.
    *
@@ -136,7 +136,8 @@ module.exports  = {
     new HtmlWebpackPlugin({
       title: 'React Starter',
       template: 'src/templates/main.html',
-      chunks: ['main'],
+      filename: 'main.html',
+      excludeChunks: ['container'],
       minify: {
         collapseWhitespace: true,
         removeComments: true,

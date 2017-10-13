@@ -17,7 +17,6 @@ render(
     <ConnectedRouter history={history}>
       <div>
         <Route
-          exact
           path="/"
           component={Viewer}
         />

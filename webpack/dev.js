@@ -29,6 +29,7 @@ module.exports = webpackMerge(commonConfig, {
     port: 4000,
     hot: true,
     inline: true,
+    overlay: true,
   },
   plugins: [
     /**
@@ -45,7 +46,9 @@ module.exports = webpackMerge(commonConfig, {
     new HtmlWebpackPlugin({
       title: 'React Starter - Container',
       template: 'src/templates/container.html',
-      chunks: ['container'],
+      filename: 'index.html',
+      excludeChunks: ['main'],
+      inject: 'head',
       minify: {
         collapseWhitespace: true,
         removeComments: true,

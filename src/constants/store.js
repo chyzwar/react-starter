@@ -9,9 +9,7 @@ const store = createStore(
   combineReducers({
     router: routerReducer,
   }),
-  applyMiddleware(
-    routerMiddleware(browserHistory),
-  ),
+  applyMiddleware(routerMiddleware(browserHistory)),
 );
 
 export default store;

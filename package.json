@@ -5,7 +5,8 @@
   "main": "main.js",
   "scripts": {
     "start": "webpack-dev-server --config ./webpack/dev",
-    "start:build": "webpack-dev-server --config ./webpack/prod",
+    "start:prod": "webpack-dev-server --config ./webpack/prod",
+
     "build": "webpack --config ./webpack/prod -p",
     "build:watch": "webpack --config ./webpack/prod -p --watch"
   },
@@ -20,11 +21,11 @@
   "license": "MIT",
   "repository": "https://github.com/chyzwar/react-starter",
   "devDependencies": {
-    "eslint": "3.19.x",
-    "eslint-config-airbnb": "15.x.x",
+    "eslint": "4.8.x",
+    "eslint-config-airbnb": "16.x.x",
     "eslint-plugin-flowtype": "2.x.x",
-    "eslint-plugin-react": "7.1.x",
-    "eslint-plugin-jsx-a11y": "5.1.x",
+    "eslint-plugin-react": "7.x.x",
+    "eslint-plugin-jsx-a11y": "6.x.x",
     "eslint-plugin-import": "2.7.x",
 
     "babel-loader": "*",
@@ -55,7 +56,11 @@
     "babel-eslint": "8.x.x",
     "babel-preset-env": "next",
     "babel-preset-flow": "next",
-    "babel-preset-react": "next"
+    "babel-preset-react": "next",
+
+    "redux-devtools": "3.x.x",
+    "redux-devtools-dock-monitor": "1.x.x",
+    "redux-devtools-log-monitor": "1.x.x"
   },
   "dependencies": {
     "history": "4.x.x",
@@ -66,7 +71,6 @@
     "react-router": "4.x.x",
     "react-router-dom": "*",
     "react-router-redux": "next",
-    "redux": "3.x.x",
-    "redux-devtools-extension": "*"
+    "redux": "3.x.x"
   }
 }

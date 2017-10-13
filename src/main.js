@@ -1,8 +1,8 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 
-import { ConnectedRouter } from 'react-router-redux';
+import { render } from 'react-dom';
 import { Provider } from 'react-redux';
+import { ConnectedRouter } from 'react-router-redux';
 import { Route } from 'react-router';
 
 import history from './constants/history';
@@ -12,7 +12,7 @@ import Create from './routes/Create';
 import History from './routes/History';
 import Manage from './routes/Manage';
 
-ReactDOM.render(
+render(
   <Provider store={store}>
     <ConnectedRouter history={history}>
       <div>

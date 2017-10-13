@@ -135,7 +135,8 @@ module.exports  = {
      */
     new HtmlWebpackPlugin({
       title: 'React Starter',
-      template: 'src/templates/index.html',
+      template: 'src/templates/main.html',
+      chunks: ['main'],
       minify: {
         collapseWhitespace: true,
         removeComments: true,

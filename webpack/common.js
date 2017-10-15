@@ -1,7 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 
 module.exports = {
@@ -117,17 +116,6 @@ module.exports = {
     ],
   },
   plugins: [
-    /**
-    * Plugin: CopyWebpackPlugin
-    * Description: Copy files and directories in webpack.
-    *
-    * Copies project static assets.
-    *
-    * See: https://www.npmjs.com/package/copy-webpack-plugin
-    */
-    new CopyWebpackPlugin([
-      { from: 'src/assets', to: 'assets' },
-    ]),
     /**
      * HtmlWebpackPlugin configuration
      *

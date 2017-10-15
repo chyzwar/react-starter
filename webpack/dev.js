@@ -63,7 +63,10 @@ module.exports = webpackMerge(commonConfig, {
      * @see https://webpack.js.org/plugins/define-plugin/
      */
     new webpack.DefinePlugin({
-      NODE_ENV: JSON.stringify('development'),
+      'process.env': {
+        NODE_ENV: JSON.stringify('development'),
+        CONFIG_NAME: JSON.stringify('dev'),
+      },
     }),
   ],
 });

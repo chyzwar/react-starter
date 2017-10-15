@@ -14,6 +14,8 @@ import Manage from './containers/Manage';
 
 configureStore()
   .then((store) => {
+    window.store = store;
+
     render(
       <Provider store={store}>
         <ConnectedRouter history={history}>

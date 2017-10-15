@@ -6,10 +6,13 @@ import persistState from 'redux-devtools/lib/persistState';
 
 import routerMiddleware from '../middleware/routerMiddleware';
 import loggerMiddleware from '../middleware/loggerMiddleware';
-
 import todoReducer from '../reducers/todoReducer';
 import routerReducer from '../reducers/routerReducer';
 import configReducer from '../reducers/configReducer';
+
+import DevTool from '../containers/DevTool/DevTool';
+
+window.DevTool = DevTool;
 
 const middlewares = applyMiddleware(
   routerMiddleware,
@@ -24,6 +27,7 @@ const reducers = combineReducers({
 
 const enhancer = compose(
   middlewares,
+  DevTool.instrument(),
   persistState(window.location.href.match(/[?&]debug_session=([^&#]+)\b/)),
 );
 

@@ -1,9 +1,16 @@
-import history from './history';
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-console.log(history);
+import { Provider } from 'react-redux';
 
-// const main = document.getElementById('main');
+const { contentWindow } = document.getElementById('main');
 
-history.listen(({ pathname, state }, action) => {
-  console.log(action, pathname, state);
-});
+setTimeout(() => {
+  ReactDOM.render(
+    <Provider store={contentWindow.store}>
+      <contentWindow.DevTool />
+    </Provider>,
+    document.getElementById('dev-tools'),
+  );
+}, 2000);
+

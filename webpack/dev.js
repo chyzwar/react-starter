@@ -48,7 +48,6 @@ module.exports = webpackMerge(commonConfig, {
       template: 'src/templates/container.html',
       filename: 'index.html',
       excludeChunks: ['main'],
-      inject: 'head',
       minify: {
         collapseWhitespace: true,
         removeComments: true,

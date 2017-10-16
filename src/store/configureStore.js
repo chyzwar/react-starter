@@ -1,7 +1,7 @@
 
 
 async function configureStore() {
-  const config = await import(`../config/${process.env.CONFIG_NAME}`);
+  const { default: config } = await import(`../config/${process.env.CONFIG_NAME}`);
 
   switch (process.env.NODE_ENV) {
     case 'production':

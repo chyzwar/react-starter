@@ -20,6 +20,9 @@
   },
 
   "extends": "airbnb",
+  "plugins": [
+    "flowtype"
+  ],
 
   "rules": {
     "react/jsx-filename-extension": ["off"],

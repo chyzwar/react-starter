@@ -5,7 +5,6 @@ import { Provider } from 'react-redux';
 import { ConnectedRouter } from 'connected-react-router';
 import { Route } from 'react-router';
 
-import initialize from './containers/DevTools/initialize';
 import history from './history';
 import configureStore from './store/configureStore';
 import Viewer from './containers/Viewer';
@@ -15,8 +14,6 @@ import Manage from './containers/Manage';
 
 configureStore()
   .then((store) => {
-    initialize(store);
-
     ReactDOM.render(
       <Provider store={store}>
         <ConnectedRouter history={history}>

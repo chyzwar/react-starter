@@ -26,6 +26,7 @@
     "eslint-plugin-react": "7.x.x",
     "eslint-plugin-jsx-a11y": "6.x.x",
     "eslint-plugin-import": "2.7.x",
+
     "babel-loader": "*",
     "html-loader": "*",
     "node-sass": "*",
@@ -37,6 +38,7 @@
     "url-loader": "*",
     "file-loader": "*",
     "eslint-loader": "*",
+
     "webpack": "3.x.x",
     "webpack-merge": "4.x.x",
     "webpack-dev-server": "2.x.x",
@@ -44,6 +46,7 @@
     "clean-webpack-plugin": "0.x.x",
     "extract-text-webpack-plugin": "3.x.x",
     "webpack-bundle-analyzer": "2.x.x",
+
     "jest": "21.x.x",
     "enzyme": "3.x.x",
     "babel-core": "next",
@@ -56,20 +59,21 @@
   },
   "dependencies": {
     "babel-polyfill": "next",
+    "connected-react-router": "4.x.x",
     "history": "4.x.x",
     "prop-types": "15.x.x",
     "react": "16.x.x",
-    "react-jss": "7.x.x",
     "react-dom": "16.x.x",
+    "react-hot-loader": "*",
+    "react-jss": "7.x.x",
     "react-redux": "5.x.x",
     "react-router": "4.x.x",
     "react-router-dom": "*",
-    "connected-react-router": "4.x.x",
-    "react-hot-loader": "*",
     "redux": "3.x.x",
-    "redux-logger": "3.x.x",
     "redux-devtools": "3.x.x",
     "redux-devtools-dock-monitor": "1.x.x",
-    "redux-devtools-log-monitor": "1.x.x"
+    "redux-devtools-extension": "^2.13.2",
+    "redux-devtools-log-monitor": "1.x.x",
+    "redux-logger": "3.x.x"
   }
 }

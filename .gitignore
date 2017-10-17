@@ -13,3 +13,6 @@ build
 # Editors
 .vscode
 .idea
+
+# Typings
+flow-typed

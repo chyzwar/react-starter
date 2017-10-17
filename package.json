@@ -49,6 +49,8 @@
 
     "jest": "21.x.x",
     "enzyme": "3.x.x",
+    "flow-bin": "0.57.3",
+
     "babel-core": "next",
     "babel-eslint": "8.x.x",
     "babel-preset-env": "next",

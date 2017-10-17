@@ -2,14 +2,16 @@ import applyMiddleware from 'redux/lib/applyMiddleware';
 import combineReducers from 'redux/lib/combineReducers';
 import compose from 'redux/lib/compose';
 import createStore from 'redux/lib/createStore';
+import { connectRouter } from 'connected-react-router';
 
+import history from '../history';
 import routerMiddleware from '../middleware/routerMiddleware';
 import loggerMiddleware from '../middleware/loggerMiddleware';
 import todoReducer from '../reducers/todoReducer';
-import routerReducer from '../reducers/routerReducer';
 import configReducer from '../reducers/configReducer';
 import instrument from '../containers/DevTools/instrument';
 import persistState from '../containers/DevTools/persistState';
+
 
 const middlewares = applyMiddleware(
   routerMiddleware,
@@ -18,7 +20,6 @@ const middlewares = applyMiddleware(
 
 const reducers = combineReducers({
   todo: todoReducer,
-  router: routerReducer,
   config: configReducer,
 });
 
@@ -30,7 +31,7 @@ const enhancers = compose(
 
 function configureStore(initialState = {}) {
   return createStore(
-    reducers,
+    connectRouter(history)(reducers),
     initialState,
     enhancers,
   );

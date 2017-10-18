@@ -2,6 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const webpackMerge = require('webpack-merge');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const MinifyPlugin = require("babel-minify-webpack-plugin");
 const commonConfig = require('./common.js');
 
 /**
@@ -38,34 +39,12 @@ module.exports = webpackMerge(commonConfig, {
       { root: path.resolve(), verbose: true },
     ),
     /**
-     * Plugin: UglifyJsPlugin
+     * Plugin: BabelMinify
      * Description: Minimize all JavaScript output of chunks.
      *
-     * @see https://github.com/webpack-contrib/uglifyjs-webpack-plugin
+     * @see https://github.com/webpack-contrib/babel-minify-webpack-plugin
      */
-    new webpack.optimize.UglifyJsPlugin({
-      sourceMap: true,
-      beautify: false,
-      output: {
-        comments: false,
-      },
-      mangle: {
-        screw_ie8: true,
-      },
-      compress: {
-        screw_ie8: true,
-        warnings: false,
-        conditionals: true,
-        unused: true,
-        comparisons: true,
-        sequences: true,
-        dead_code: true,
-        evaluate: true,
-        if_return: true,
-        join_vars: true,
-        negate_iife: false,
-      },
-    }),
+     new MinifyPlugin(),
     /**
      * Plugin: DefinePlugin strigify in source code
      *

@@ -49,6 +49,7 @@
 
     "jest": "21.x.x",
     "enzyme": "3.x.x",
+
     "babel-core": "next",
     "babel-eslint": "8.x.x",
     "babel-preset-env": "next",
@@ -70,10 +71,7 @@
     "react-router": "4.x.x",
     "react-router-dom": "*",
     "redux": "3.x.x",
-    "redux-devtools": "3.x.x",
-    "redux-devtools-dock-monitor": "1.x.x",
-    "redux-devtools-extension": "^2.13.2",
-    "redux-devtools-log-monitor": "1.x.x",
+    "redux-devtools-extension": "2.x.x",
     "redux-logger": "3.x.x"
   }
 }

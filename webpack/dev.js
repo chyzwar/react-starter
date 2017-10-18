@@ -16,6 +16,7 @@ module.exports = webpackMerge(commonConfig, {
    * Add aditional entry for debugging
    */
   entry: {
+    reactHotLoadar: 'react-hot-loader/patch',
     container: './src/container.js',
   },
   /**

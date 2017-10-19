@@ -27,7 +27,6 @@
   "rules": {
     "react/jsx-filename-extension": ["off"],
     "react/prefer-stateless-function": ["off"],
-    "react/prop-types": ["off"],
     "jsx-a11y/anchor-is-valid": ["off"],
 
     "flowtype/boolean-style": [ "error", "boolean"],

@@ -4,9 +4,11 @@ import { Provider } from 'react-redux';
 import { AppContainer } from 'react-hot-loader';
 import { ConnectedRouter } from 'connected-react-router';
 
+import StoreProps from './StoreProps';
+import HistoryProps from './HistoryProps';
 import Routes from './Routes';
 
-class RootProd {
+class Root {
   render() {
     const { store, history } = this.props;
 
@@ -24,4 +26,9 @@ class RootProd {
   }
 }
 
-export default RootProd;
+Root.propTypes = {
+  store: StoreProps,
+  history: HistoryProps,
+};
+
+export default Root;

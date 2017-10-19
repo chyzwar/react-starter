@@ -6,7 +6,11 @@ import Root from './containers/Root';
 
 const store = configureStore();
 
-ReactDOM.render(
-  <Root store={store} history={history} />,
-  document.getElementById('root'),
-);
+const render = () => {
+  ReactDOM.render(
+    <Root store={store} history={history} />,
+    document.getElementById('root'),
+  );
+};
+
+render();

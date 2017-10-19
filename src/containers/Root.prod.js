@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import { Provider } from 'react-redux';
 import { AppContainer } from 'react-hot-loader';
@@ -8,7 +9,7 @@ import StoreProps from './StoreProps';
 import HistoryProps from './HistoryProps';
 import Routes from './Routes';
 
-class Root {
+class Root extends React.Component {
   render() {
     const { store, history } = this.props;
 
@@ -27,8 +28,8 @@ class Root {
 }
 
 Root.propTypes = {
-  store: StoreProps,
-  history: HistoryProps,
+  store: PropTypes.shape(StoreProps).isRequired,
+  history: PropTypes.shape(HistoryProps).isRequired,
 };
 
 export default Root;

@@ -1,15 +1,9 @@
-import RootProd from './Root.prod';
-import RootDev from './Root.dev';
 
-let Root;
-
+/* eslint global-require: ["off"] */
 if (process.env.NODE_ENV === 'development') {
-  Root = RootDev;
+  module.exports = require('./Root.dev');
 }
 
 if (process.env.NODE_ENV === 'production') {
-  Root = RootProd;
+  module.exports = require('./Root.prod');
 }
-
-
-export default Root;

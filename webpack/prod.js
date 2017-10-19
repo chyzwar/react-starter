@@ -29,7 +29,7 @@ module.exports = webpackMerge(commonConfig, {
   plugins: [
     /**
      * Plugin CleanWebpackPlugin
-     * Description: Cleadn build folder.
+     * Description: Clean build folder.
      *
      * @see https://github.com/johnagan/clean-webpack-plugin
      */
@@ -54,7 +54,7 @@ module.exports = webpackMerge(commonConfig, {
       },
       compress: {
         screw_ie8: true,
-        warnings: true,
+        warnings: false,
         conditionals: true,
         unused: true,
         comparisons: true,

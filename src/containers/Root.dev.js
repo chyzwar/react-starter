@@ -9,7 +9,7 @@ import Routes from './Routes';
 class Root extends React.Component {
   render() {
     const { store, history } = this.props;
-    console.log('Root.dev');
+
     return (
       <AppContainer>
         <Provider store={store}>

@@ -1,16 +1,16 @@
+const configPath = `../config/${process.env.CONFIG_NAME}`;
 
-
+/* eslint import/no-dynamic-require: ["off"] */
+/* eslint global-require: ["off"] */
 async function configureStore() {
-  const { default: config } = await import(`../config/${process.env.CONFIG_NAME}`);
+  const config = require(configPath);
 
   switch (process.env.NODE_ENV) {
     case 'production':
-      return import('./configureStore.prod')
-        .then(({ default: configure }) => configure({ config }));
+      return require('./configureStore.prod')(config);
 
     case 'development':
-      return import('./configureStore.dev')
-        .then(({ default: configure }) => configure({ config }));
+      return require('./configureStore.dev')(config);
 
     default:
       throw new Error(`Unknown webpack mode: ${process.env.NODE_ENV}`);

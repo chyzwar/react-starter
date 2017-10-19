@@ -29,7 +29,6 @@
     "react/prefer-stateless-function": ["off"],
     "react/prop-types": ["off"],
     "jsx-a11y/anchor-is-valid": ["off"],
-    "import/no-mutable-exports": ["off"],
 
     "flowtype/boolean-style": [ "error", "boolean"],
     "flowtype/define-flow-type": "warn",

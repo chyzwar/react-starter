@@ -7,14 +7,12 @@
         "ie": 11,
         "firefox": 50
       },
-      "useBuiltIns": "usage",
-      "shippedProposals": true
+      "useBuiltIns": "usage"
     }],
     "react",
     "flow"
   ],
   "plugins": [
-    "syntax-dynamic-import",
     "transform-object-rest-spread",
     "react-hot-loader/babel"
   ]

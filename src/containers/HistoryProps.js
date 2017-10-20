@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 
 const HistoryProps = {
-  location: PropTypes.string,
+  location: PropTypes.object,
 };
 
 export default HistoryProps;

@@ -2,6 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const webpackMerge = require('webpack-merge');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const commonConfig = require('./common.js');
 
 /**
@@ -37,6 +38,25 @@ module.exports = webpackMerge(commonConfig, {
       ['build'],
       { root: path.resolve(), verbose: true },
     ),
+    /**
+     * HtmlWebpackPlugin configuration
+     *
+     * @see https://webpack.js.org/plugins/html-webpack-plugin/
+     */
+    new HtmlWebpackPlugin({
+      title: 'React Starter',
+      template: 'src/templates/main.html',
+      filename: 'index.html',
+      chunkSortMode: 'manual',
+      chunks: ['common', 'main'],
+      minify: {
+        collapseWhitespace: true,
+        removeComments: true,
+        removeRedundantAttributes: false,
+        removeScriptTypeAttributes: false,
+        removeStyleLinkTypeAttributes: false,
+      },
+    }),
     /**
      * Plugin: UglifyJsPlugin
      * Description: Minimize all JavaScript output of chunks.

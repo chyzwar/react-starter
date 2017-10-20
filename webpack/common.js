@@ -1,7 +1,5 @@
 const path = require('path');
 const webpack = require('webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-
 
 module.exports = {
   /**
@@ -116,24 +114,6 @@ module.exports = {
     ],
   },
   plugins: [
-    /**
-     * HtmlWebpackPlugin configuration
-     *
-     * @see https://webpack.js.org/plugins/html-webpack-plugin/
-     */
-    new HtmlWebpackPlugin({
-      title: 'React Starter',
-      template: 'src/templates/main.html',
-      filename: 'main.html',
-      excludeChunks: ['container'],
-      minify: {
-        collapseWhitespace: true,
-        removeComments: true,
-        removeRedundantAttributes: false,
-        removeScriptTypeAttributes: false,
-        removeStyleLinkTypeAttributes: false,
-      },
-    }),
     /*
      * All modules from common entry will be extracted, also
      * If module is shared by 2 childrens it will get extracted to commons.

@@ -1,7 +1,5 @@
 
 
-/* eslint import/no-dynamic-require: ["off"] */
-/* eslint global-require: ["off"] */
 function configureStore() {
   const { default: config } = require(`../config/${process.env.CONFIG_NAME}`);
 

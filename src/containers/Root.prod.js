@@ -28,8 +28,8 @@ class Root extends React.Component {
 }
 
 Root.propTypes = {
-  store: PropTypes.shape(StoreProps).isRequired,
   history: PropTypes.shape(HistoryProps).isRequired,
+  store: PropTypes.shape(StoreProps).isRequired,
 };
 
 export default Root;

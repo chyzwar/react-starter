@@ -13,10 +13,10 @@ module.exports = webpackMerge(commonConfig, {
   devtool: 'inline-source-map',
   cache: true,
   /**
-   * Add aditional entry for debugging
+   * Add aditional entry for hot reload and container
    */
   entry: {
-    reactHotLoadar: 'react-hot-loader/patch',
+    reactHotLoaderPath: 'react-hot-loader/patch',
     container: './src/container.js',
   },
   /**
@@ -26,6 +26,7 @@ module.exports = webpackMerge(commonConfig, {
    */
   devServer: {
     contentBase: path.resolve('build'),
+    historyApiFallback: true,
     compress: true,
     port: 4000,
     hot: true,
@@ -45,10 +46,32 @@ module.exports = webpackMerge(commonConfig, {
      * @see https://webpack.js.org/plugins/html-webpack-plugin/
      */
     new HtmlWebpackPlugin({
+      title: 'React Starter',
+      template: 'src/templates/main.html',
+      filename: 'main.html',
+      excludeChunks: ['container'],
+      chunksSortMode: 'manual',
+      chunks: ['reactHotLoaderPath', 'common', 'main'],
+      minify: {
+        collapseWhitespace: true,
+        removeComments: true,
+        removeRedundantAttributes: false,
+        removeScriptTypeAttributes: false,
+        removeStyleLinkTypeAttributes: false,
+      },
+    }),
+    /**
+     * HtmlWebpackPlugin configuration
+     *
+     * @see https://webpack.js.org/plugins/html-webpack-plugin/
+     */
+    new HtmlWebpackPlugin({
       title: 'React Starter - Container',
       template: 'src/templates/container.html',
       filename: 'index.html',
       excludeChunks: ['main'],
+      chunksSortMode: 'manual',
+      chunks: ['common', 'container'],
       minify: {
         collapseWhitespace: true,
         removeComments: true,

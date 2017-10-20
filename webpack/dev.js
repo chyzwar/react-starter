@@ -61,9 +61,6 @@ module.exports = webpackMerge(commonConfig, {
       minify: {
         collapseWhitespace: true,
         removeComments: true,
-        removeRedundantAttributes: false,
-        removeScriptTypeAttributes: false,
-        removeStyleLinkTypeAttributes: false,
       },
     }),
     /**
@@ -81,9 +78,6 @@ module.exports = webpackMerge(commonConfig, {
       minify: {
         collapseWhitespace: true,
         removeComments: true,
-        removeRedundantAttributes: false,
-        removeScriptTypeAttributes: false,
-        removeStyleLinkTypeAttributes: false,
       },
     }),
     /**

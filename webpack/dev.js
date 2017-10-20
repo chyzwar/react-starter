@@ -59,8 +59,8 @@ module.exports = webpackMerge(commonConfig, {
       chunksSortMode: 'manual',
       chunks: ['reactHotLoaderPath', 'common', 'main'],
       minify: {
-        collapseWhitespace: true,
-        removeComments: true,
+        collapseWhitespace: false,
+        removeComments: false,
       },
     }),
     /**
@@ -76,8 +76,8 @@ module.exports = webpackMerge(commonConfig, {
       chunksSortMode: 'manual',
       chunks: ['container'],
       minify: {
-        collapseWhitespace: true,
-        removeComments: true,
+        collapseWhitespace: false,
+        removeComments: false,
       },
     }),
     /**

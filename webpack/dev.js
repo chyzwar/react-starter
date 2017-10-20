@@ -35,6 +35,12 @@ module.exports = webpackMerge(commonConfig, {
   },
   plugins: [
     /**
+     * Plugin: NamedModulesPlugin
+     *
+     * @see https://webpack.js.org/plugins/named-modules-plugin/
+     */
+    new webpack.NamedModulesPlugin(),
+    /**
      * Plugin: HotModuleReplacementPlugin
      *
      * @see https://webpack.js.org/plugins/hot-module-replacement-plugin/
@@ -71,7 +77,7 @@ module.exports = webpackMerge(commonConfig, {
       filename: 'index.html',
       excludeChunks: ['main'],
       chunksSortMode: 'manual',
-      chunks: ['common', 'container'],
+      chunks: ['container'],
       minify: {
         collapseWhitespace: true,
         removeComments: true,

@@ -1,5 +1,5 @@
 const path = require('path');
-const webpack = require('webpack');
+
 
 module.exports = {
   /**
@@ -14,6 +14,12 @@ module.exports = {
     main: './src/main.js',
   },
   output: {
+    /**
+     * The publicPath specifies the public URL address of the output files when referenced
+     *
+     * @see  https://webpack.js.org/guides/public-path/
+     */
+    publicPath: '/',
     /**
      * The output directory as absolute path (required).
      *

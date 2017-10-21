@@ -6,19 +6,20 @@ import configureStore from './store/configureStore';
 import Root from './containers/Root';
 
 const store = configureStore();
-
 const element = document.getElementById('root');
-const component = (
-  <Root store={store} history={history} />
-);
 
-ReactDOM.render(component, element);
+const render = (Component) => {
+  ReactDOM.render(<Component store={store} history={history} />, element);
+};
 
-console.log(module.hot, 'module hot');
+render(Root);
 
 if (module.hot) {
   module.hot.accept(
     './containers/Root',
-    () => { ReactDOM.render(component, element); },
+    () => {
+      const { default: Component } = require('./containers/Root');
+      render(Component);
+    },
   );
 }

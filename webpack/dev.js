@@ -26,6 +26,7 @@ module.exports = webpackMerge(commonConfig, {
    */
   devServer: {
     contentBase: path.resolve('build'),
+    publicPath: '/',
     historyApiFallback: true,
     compress: true,
     port: 4000,

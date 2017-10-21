@@ -7,7 +7,7 @@ export function addTodo(text) {
   };
 }
 
-export function deleteTodo(id) {
+export function deleteTodo(id: string) {
   return {
     type: types.DELETE_TODO,
     id,
@@ -22,7 +22,7 @@ export function editTodo(id, text) {
   };
 }
 
-export function markTodo(id) {
+export function markTodo(id: string) {
   return {
     type: types.MARK_TODO,
     id,

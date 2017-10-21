@@ -32,10 +32,10 @@
     "jsx-a11y/anchor-is-valid": ["off"],
 
     "flowtype/boolean-style": [ "error", "boolean"],
-    "flowtype/define-flow-type": "warn",
+    "flowtype/define-flow-type": ["warn"],
     "flowtype/generic-spacing": [ "error", "never"],
     "flowtype/no-primitive-constructor-types": "error",
-    "flowtype/no-weak-types": "error",
+    "flowtype/no-weak-types": ["error"],
     "flowtype/object-type-delimiter": [ "error","comma"],
     "flowtype/require-valid-file-annotation": "error",
     "flowtype/semi": ["error", "always"],

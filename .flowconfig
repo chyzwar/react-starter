@@ -1,8 +1,10 @@
-[include]
-./src/.*
-
 [ignore]
-./dist/.*
+.*/build/*
+.*/webpack/*
+.*/node_modules/*
 
 [libs]
-./flow-typed/
+./flow-typed
+
+[options]
+all=true

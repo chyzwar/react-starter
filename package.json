@@ -6,8 +6,12 @@
   "scripts": {
     "start": "webpack-dev-server --config ./webpack/dev",
     "start:prod": "webpack-dev-server --config ./webpack/prod",
+
     "build": "webpack --config ./webpack/prod -p",
-    "build:watch": "webpack --config ./webpack/prod -p --watch"
+    "build:watch": "webpack --config ./webpack/prod -p --watch",
+
+    "flow": "flow check",
+    "eslint": "eslint"
   },
   "keywords": [
     "starter",

@@ -83,6 +83,17 @@ module.exports = webpackMerge(commonConfig, {
         negate_iife: false,
       },
     }),
+    /*
+     * All modules from common entry will be extracted, also
+     * If module is shared by 2 childrens it will get extracted to commons.
+     *
+     * @see: https://webpack.js.org/plugins/commons-chunk-plugin/
+    */
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'common',
+      minChunks: 2,
+      filename: 'common.[hash].js',
+    }),
     /**
      * Plugin: DefinePlugin strigify in source code
      *

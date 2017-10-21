@@ -9,7 +9,7 @@ import routerMiddleware from '../middleware/routerMiddleware';
 import loggerMiddleware from '../middleware/loggerMiddleware';
 import todoReducer from '../reducers/todoReducer';
 import configReducer from '../reducers/configReducer';
-
+import themeReducer from '../reducers/themeReducer';
 
 const middlewares = applyMiddleware(
   routerMiddleware,
@@ -19,6 +19,7 @@ const middlewares = applyMiddleware(
 const reducers = combineReducers({
   todo: todoReducer,
   config: configReducer,
+  theme: themeReducer,
 });
 
 const enhancers = composeWithDevTools(middlewares);

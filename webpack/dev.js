@@ -52,12 +52,12 @@ module.exports = webpackMerge(commonConfig, {
      * @see https://webpack.js.org/plugins/html-webpack-plugin/
      */
     new HtmlWebpackPlugin({
-      title: 'React Starter',
+      title: 'React Starter Application',
       template: 'src/templates/main.html',
       filename: 'main.html',
       excludeChunks: ['container'],
       chunksSortMode: 'manual',
-      chunks: ['reactHotLoaderPath', 'common', 'main'],
+      chunks: ['reactHotLoaderPath', 'main'],
       minify: {
         collapseWhitespace: false,
         removeComments: false,
@@ -69,12 +69,12 @@ module.exports = webpackMerge(commonConfig, {
      * @see https://webpack.js.org/plugins/html-webpack-plugin/
      */
     new HtmlWebpackPlugin({
-      title: 'React Starter - Container',
+      title: 'React Starter Container',
       template: 'src/templates/container.html',
       filename: 'index.html',
       excludeChunks: ['main'],
       chunksSortMode: 'manual',
-      chunks: ['container'],
+      chunks: ['reactHotLoaderPath', 'container'],
       minify: {
         collapseWhitespace: false,
         removeComments: false,

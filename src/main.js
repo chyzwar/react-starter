@@ -14,7 +14,11 @@ const component = (
 
 ReactDOM.render(component, element);
 
-module.hot.accept(
-  './containers/Root',
-  () => { ReactDOM.render(component, element); },
-);
+console.log(module.hot, 'module hot');
+
+if (module.hot) {
+  module.hot.accept(
+    './containers/Root',
+    () => { ReactDOM.render(component, element); },
+  );
+}

@@ -3,6 +3,7 @@ const webpack = require('webpack');
 const webpackMerge = require('webpack-merge');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const FlowWebpackPlugin = require('flow-webpack-plugin');
 const commonConfig = require('./common.js');
 
 /**
@@ -93,6 +94,14 @@ module.exports = webpackMerge(commonConfig, {
       name: 'common',
       minChunks: 2,
       filename: 'common.[hash].js',
+    }),
+    /**
+     * Plugin FlowWebpackLoader
+     *
+     * @see https://github.com/happylynx/flow-webpack-plugin
+     */
+    new FlowWebpackPlugin({
+      failOnError: true,
     }),
     /**
      * Plugin: DefinePlugin strigify in source code

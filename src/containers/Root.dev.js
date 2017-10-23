@@ -11,23 +11,21 @@ import StoreProps from './StoreProps';
 import HistoryProps from './HistoryProps';
 import Routes from './Routes';
 
-class Root extends React.Component {
-  render() {
-    const { store, history } = this.props;
+const Root = (props) => {
+  const { store, history } = props;
 
-    return (
-      <AppContainer>
+  return (
+    <AppContainer>
+      <Provider store={store}>
         <Provider store={store}>
-          <Provider store={store}>
-            <ConnectedRouter history={history}>
-              <Routes />
-            </ConnectedRouter>
-          </Provider>
+          <ConnectedRouter history={history}>
+            <Routes />
+          </ConnectedRouter>
         </Provider>
-      </AppContainer>
-    );
-  }
-}
+      </Provider>
+    </AppContainer>
+  );
+};
 
 Root.propTypes = {
   history: PropTypes.shape(HistoryProps).isRequired,

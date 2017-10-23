@@ -7,11 +7,9 @@ import Routes from './Routes';
 
 const Root = ({ store, history }: RootProps) => (
   <Provider store={store}>
-    <Provider store={store}>
-      <ConnectedRouter history={history}>
-        <Routes />
-      </ConnectedRouter>
-    </Provider>
+    <ConnectedRouter history={history}>
+      <Routes />
+    </ConnectedRouter>
   </Provider>
 );
 

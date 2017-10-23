@@ -1,5 +1,5 @@
 const path = require('path');
-
+const FlowWebpackPlugin = require('flow-webpack-plugin');
 
 module.exports = {
   /**
@@ -119,5 +119,12 @@ module.exports = {
       },
     ],
   },
-  plugins: [],
+  plugins: [
+    /**
+     * Plugin FlowWebpackLoader
+     *
+     * @see https://github.com/happylynx/flow-webpack-plugin
+     */
+    new FlowWebpackPlugin(),
+  ],
 };

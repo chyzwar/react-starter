@@ -1,10 +1,10 @@
 import React from 'react';
 import { Route } from 'react-router';
 
-import Viewer from './Viewer';
+import Viewer from './Viewer/Viewer';
 import Create from './Create/Create';
-import History from './History';
-import Manage from './Manage';
+import History from './History/History';
+import Manage from './Manage/Manage';
 
 const Routes = () => (
   [

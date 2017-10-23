@@ -6,10 +6,9 @@ import configureStore from './store/configureStore';
 import Root from './containers/Root';
 
 const store = configureStore();
-const element = document.getElementById('root');
 
 const render = (Component) => {
-  ReactDOM.render(<Component store={store} history={history} />, element);
+  ReactDOM.render(<Component store={store} history={history} />, document.getElementById('root'));
 };
 
 render(Root);

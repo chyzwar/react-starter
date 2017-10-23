@@ -5,10 +5,10 @@ function configureStore() {
 
   switch (process.env.NODE_ENV) {
     case 'production':
-      return require('./configureStore.prod').default(config);
+      return require('./configureStore.prod').default({ config });
 
     case 'development':
-      return require('./configureStore.dev').default(config);
+      return require('./configureStore.dev').default({ config });
 
     default:
       throw new Error(`Unknown webpack mode: ${process.env.NODE_ENV}`);

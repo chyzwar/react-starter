@@ -1,10 +1,8 @@
 [ignore]
-.*/src/constants/*
 .*/src/config/*
 .*/src/store/*
 .*/src/reducers/*
 .*/src/main.js
-.*.src/actions/*
 
 .*/build/*
 .*/webpack/*

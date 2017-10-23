@@ -43,7 +43,12 @@
     "flowtype/space-before-generic-bracket": [ "error", "never"],
     "flowtype/space-before-type-colon": [ "error", "never"],
     "flowtype/union-intersection-spacing": [ "error", "always" ],
-    "flowtype/use-flow-type": "warn",
-    "flowtype/valid-syntax": "warn"
+    "flowtype/use-flow-type": ["error"],
+    "flowtype/valid-syntax": ["error"]
+  },
+  "settings": {
+    "flowtype": {
+      "onlyFilesWithFlowAnnotation": false
+    }
   }
 }

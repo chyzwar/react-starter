@@ -1,5 +1,5 @@
 {
-  "name": "my-project",
+  "name": "react-starter",
   "jest": {
     "verbose": true
   }

@@ -9,7 +9,7 @@ import Root from './containers/Root';
 
 const store = configureStore();
 
-const render = (Component) => {
+const render = (Component: Component) => {
   ReactDOM.render(<Component store={store} history={history} />, document.getElementById('root'));
 };
 

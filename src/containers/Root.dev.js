@@ -1,5 +1,3 @@
-// @flow
-
 import React from 'react';
 import PropTypes from 'prop-types';
 
@@ -11,21 +9,17 @@ import StoreProps from './StoreProps';
 import HistoryProps from './HistoryProps';
 import Routes from './Routes';
 
-const Root = (props) => {
-  const { store, history } = props;
-
-  return (
-    <AppContainer>
+const Root = ({ store, history }) => (
+  <AppContainer>
+    <Provider store={store}>
       <Provider store={store}>
-        <Provider store={store}>
-          <ConnectedRouter history={history}>
-            <Routes />
-          </ConnectedRouter>
-        </Provider>
+        <ConnectedRouter history={history}>
+          <Routes />
+        </ConnectedRouter>
       </Provider>
-    </AppContainer>
-  );
-};
+    </Provider>
+  </AppContainer>
+);
 
 Root.propTypes = {
   history: PropTypes.shape(HistoryProps).isRequired,

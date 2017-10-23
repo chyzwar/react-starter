@@ -6,7 +6,7 @@ import Create from './Create/Create';
 import History from './History';
 import Manage from './Manage';
 
-const Routes = () => (
+const Routes = (): Array<Route> => (
   [
     <Route
       path="/"

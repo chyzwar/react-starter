@@ -1,29 +1,18 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 import { Provider } from 'react-redux';
-import { AppContainer } from 'react-hot-loader';
 import { ConnectedRouter } from 'connected-react-router';
 
-import StoreProps from './StoreProps';
-import HistoryProps from './HistoryProps';
 import Routes from './Routes';
 
-const Root = ({ store, history }) => (
-  <AppContainer>
+const Root = ({ store, history }: RootProps) => (
+  <Provider store={store}>
     <Provider store={store}>
-      <Provider store={store}>
-        <ConnectedRouter history={history}>
-          <Routes />
-        </ConnectedRouter>
-      </Provider>
+      <ConnectedRouter history={history}>
+        <Routes />
+      </ConnectedRouter>
     </Provider>
-  </AppContainer>
+  </Provider>
 );
-
-Root.propTypes = {
-  history: PropTypes.shape(HistoryProps).isRequired,
-  store: PropTypes.shape(StoreProps).isRequired,
-};
 
 export default Root;

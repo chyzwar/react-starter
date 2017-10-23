@@ -15,4 +15,4 @@ build
 .idea
 
 # Typings
-flow-typed
+flow-typed/npm

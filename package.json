@@ -28,7 +28,6 @@
     "eslint-plugin-react": "7.x.x",
     "eslint-plugin-jsx-a11y": "6.x.x",
     "eslint-plugin-import": "2.7.x",
-
     "babel-loader": "*",
     "html-loader": "*",
     "node-sass": "*",
@@ -40,7 +39,6 @@
     "url-loader": "*",
     "file-loader": "*",
     "eslint-loader": "*",
-
     "webpack": "3.x.x",
     "webpack-merge": "4.x.x",
     "webpack-dev-server": "2.x.x",
@@ -48,11 +46,9 @@
     "clean-webpack-plugin": "0.x.x",
     "extract-text-webpack-plugin": "3.x.x",
     "webpack-bundle-analyzer": "2.x.x",
-
     "jest": "21.x.x",
     "enzyme": "3.x.x",
     "flow-bin": "0.57.3",
-
     "babel-core": "next",
     "babel-eslint": "8.x.x",
     "babel-preset-env": "next",

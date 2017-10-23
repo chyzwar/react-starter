@@ -1,12 +1,12 @@
 import React from 'react';
-import Route from 'react-router/es/Route';
+import { Route } from 'react-router';
 
 import Viewer from './Viewer';
 import Create from './Create/Create';
 import History from './History';
 import Manage from './Manage';
 
-const Routes = (): Array<Route> => (
+const Routes = () => (
   [
     <Route
       path="/"

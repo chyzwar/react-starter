@@ -1,8 +1,8 @@
 import React from 'react';
 
 
-function Create() {
-  return (<h1> Create </h1>);
+function History() {
+  return (<h1> History </h1>);
 }
 
-export default Create;
+export default History;

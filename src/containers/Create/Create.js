@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 import { connect } from 'react-redux';
 import { addTodo } from 'actions/TodoActions';
+
 import Header from 'components/Header/Header';
 
 class Create extends React.Component {
@@ -38,6 +39,7 @@ class Create extends React.Component {
     return (
       <div>
         <Header />
+        <h1> Create Todo </h1>
         <form onSubmit={this.onSubmit}>
           <input
             value={this.state.input}
@@ -60,8 +62,4 @@ const mapDispatchToProps = dispatch => ({
   },
 });
 
-const mapStateToProps = state => ({
-  todos: state.todos,
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(Create);
+export default connect(undefined, mapDispatchToProps)(Create);

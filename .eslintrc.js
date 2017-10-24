@@ -1,4 +1,6 @@
-{
+const path = require('path');
+
+module.exports = {
   "parser": "babel-eslint",
   "env": {
     "browser": true,
@@ -51,9 +53,7 @@
       "onlyFilesWithFlowAnnotation": false
     },
     "import/resolver": {
-      "webpack": {
-        "config": "./webpack/common.js"
-      }
+      "node": { "paths": [path.resolve(__dirname, 'src')] }
     }
   }
 }

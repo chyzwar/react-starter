@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { connect } from 'react-redux';
-
 import Header from 'components/Header/Header';
 
 class Viewer extends React.Component {
@@ -13,9 +12,7 @@ class Viewer extends React.Component {
     return (
       [
         <Header />,
-        <ul>
-          {todoList}
-        </ul>,
+        <ul> {todoList} </ul>,
       ]
     );
   }

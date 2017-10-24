@@ -2,15 +2,20 @@ import 'normalize.css';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-
 import history from './history';
-import configureStore from './store/configureStore';
 import Root from './containers/Root';
+import configureStore from './store/configureStore';
 
 const store = configureStore();
 
 const render = (Component: Component) => {
-  ReactDOM.render(<Component store={store} history={history} />, document.getElementById('root'));
+  ReactDOM.render(
+    <Component
+      store={store}
+      history={history}
+    />,
+    document.getElementById('root'),
+  );
 };
 
 render(Root);

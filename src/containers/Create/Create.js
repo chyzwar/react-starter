@@ -9,14 +9,29 @@ class Create extends React.Component {
   constructor(props) {
     super(props);
 
+    this.state = {
+      input: '',
+    };
+
     this.onSubmit = this.onSubmit.bind(this);
+    this.onChange = this.onChange.bind(this);
+  }
+
+  onChange(event) {
+    event.preventDefault();
+
+    this.setState({
+      input: event.target.value,
+    });
   }
 
   onSubmit(event) {
     event.preventDefault();
 
-    this.props.addTodo(this.input.value);
-    this.input.value = '';
+    this.props.addTodo(this.state.input);
+    this.setState({
+      input: '',
+    });
   }
 
   render() {
@@ -24,7 +39,10 @@ class Create extends React.Component {
       <div>
         <Header />
         <form onSubmit={this.onSubmit}>
-          <input ref={(node) => { this.input = node; }} />
+          <input
+            value={this.state.input}
+            onChange={this.onChange}
+          />
           <button type="submit"> Add Todo </button>
         </form>
       </div>

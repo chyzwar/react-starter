@@ -1,10 +1,6 @@
 import { ADD_TODO, DELETE_TODO, EDIT_TODO, MARK_TODO, CLEAR_MARKED } from '../constants/ActionTypes';
 
-const initialState = [{
-  text: 'Use Redux',
-  marked: false,
-  id: 0,
-}];
+const initialState = [];
 
 export default function todos(state = initialState, action) {
   switch (action.type) {

@@ -7,26 +7,29 @@ import History from './History/History';
 import Manage from './Manage/Manage';
 
 const Routes = () => (
-  [
+  <div>
     <Route
-      path="/"
+      name="main"
+      path="/main.html"
+      exact
       component={Viewer}
-    />,
+    />
     <Route
+      exact
       path="/create"
       component={Create}
-    />,
+    />
     <Route
       exact
       path="/history"
       component={History}
-    />,
+    />
     <Route
       exact
       path="/manage"
       component={Manage}
-    />,
-  ]
+    />
+  </div>
 );
 
 export default Routes;

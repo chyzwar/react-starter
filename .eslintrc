@@ -49,6 +49,11 @@
   "settings": {
     "flowtype": {
       "onlyFilesWithFlowAnnotation": false
+    },
+    "import/resolver": {
+      "webpack": {
+        "config": "./webpack/common.js"
+      }
     }
   }
 }

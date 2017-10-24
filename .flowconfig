@@ -2,6 +2,7 @@
 .*/src/config/*
 .*/src/store/*
 .*/src/reducers/*
+.*/src/containers/*
 .*/src/main.js
 
 .*/build/*

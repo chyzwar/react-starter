@@ -1,14 +1,32 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
-function Viewer() {
-  return (
-    <ul>
-      <li><Link to="/">Home</Link></li>
-      <li><Link to="/create">Create</Link></li>
-      <li><Link to="/topics">Topics</Link></li>
-    </ul>
-  );
+import { connect } from 'react-redux';
+
+import Header from 'components/Header/Header';
+
+class Viewer extends React.Component {
+  render() {
+    const todoList = this.props.todos
+      .map(({ id, text }) => <li key={id}> {text} </li>);
+
+    return (
+      [
+        <Header />,
+        <ul>
+          {todoList}
+        </ul>,
+      ]
+    );
+  }
 }
 
-export default Viewer;
+Viewer.propTypes = {
+  todos: PropTypes.arrayOf(PropTypes.object).isRequired,
+};
+
+const mapStateToProps = state => ({
+  todos: state.todos,
+});
+
+export default connect(mapStateToProps)(Viewer);

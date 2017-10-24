@@ -7,7 +7,7 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 import history from '../history';
 import routerMiddleware from '../middleware/routerMiddleware';
 import loggerMiddleware from '../middleware/loggerMiddleware';
-import todoReducer from '../reducers/todoReducer';
+import todosReducer from '../reducers/todosReducer';
 import configReducer from '../reducers/configReducer';
 import themeReducer from '../reducers/themeReducer';
 
@@ -17,7 +17,7 @@ const middlewares = applyMiddleware(
 );
 
 const reducers = combineReducers({
-  todo: todoReducer,
+  todos: todosReducer,
   config: configReducer,
   theme: themeReducer,
 });

@@ -84,6 +84,14 @@ module.exports = webpackMerge(commonConfig, {
         negate_iife: false,
       },
     }),
+    /**
+     * Plugin FlowWebpackLoader
+     *
+     * @see https://github.com/happylynx/flow-webpack-plugin
+     */
+    new FlowWebpackPlugin({
+      failOnError: true,
+    }),
     /*
      * All modules from common entry will be extracted, also
      * If module is shared by 2 childrens it will get extracted to commons.
@@ -94,14 +102,6 @@ module.exports = webpackMerge(commonConfig, {
       name: 'common',
       minChunks: 2,
       filename: 'common.[hash].js',
-    }),
-    /**
-     * Plugin FlowWebpackLoader
-     *
-     * @see https://github.com/happylynx/flow-webpack-plugin
-     */
-    new FlowWebpackPlugin({
-      failOnError: true,
     }),
     /**
      * Plugin: DefinePlugin strigify in source code

@@ -2,8 +2,18 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { connect } from 'react-redux';
+import injectSheet from 'react-jss';
 import { addTodo } from '../../actions/TodoActions';
 import Header from '../../components/Header/Header';
+
+const styles = ({ palette }) => ({
+  button: {
+    background: palette.primary[50],
+  },
+  label: {
+    fontWeight: 'bold',
+  },
+});
 
 class Create extends React.Component {
   constructor(props) {
@@ -35,6 +45,12 @@ class Create extends React.Component {
   }
 
   render() {
+    const {
+      classes: {
+        button,
+      },
+    } = this.props;
+
     return (
       <div>
         <Header />
@@ -44,7 +60,7 @@ class Create extends React.Component {
             value={this.state.input}
             onChange={this.onChange}
           />
-          <button type="submit"> Add Todo </button>
+          <button type="submit" className={button}> Add Todo </button>
         </form>
       </div>
     );
@@ -53,6 +69,9 @@ class Create extends React.Component {
 
 Create.propTypes = {
   addTodo: PropTypes.func.isRequired,
+  classes: PropTypes.shape({
+    button: PropTypes.string,
+  }).isRequired,
 };
 
 const mapDispatchToProps = dispatch => ({
@@ -61,4 +80,6 @@ const mapDispatchToProps = dispatch => ({
   },
 });
 
-export default connect(undefined, mapDispatchToProps)(Create);
+const StyledCreate = injectSheet(styles)(Create);
+
+export default connect(undefined, mapDispatchToProps)(StyledCreate);

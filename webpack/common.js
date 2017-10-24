@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack');
 const FlowWebpackPlugin = require('flow-webpack-plugin');
 
 module.exports = {

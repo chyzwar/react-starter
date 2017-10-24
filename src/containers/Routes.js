@@ -9,8 +9,7 @@ import Manage from './Manage/Manage';
 const Routes = () => (
   <div>
     <Route
-      name="main"
-      path="/main.html"
+      path="/"
       exact
       component={Viewer}
     />

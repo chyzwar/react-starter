@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { connect } from 'react-redux';
-import { ThemeProvider } from 'theming';
+import { ThemeProvider } from 'react-jss';
 
 const Theming = ({ theme, children }) => (
   <ThemeProvider theme={theme}>
@@ -10,10 +10,9 @@ const Theming = ({ theme, children }) => (
   </ThemeProvider>
 );
 
-
 Theming.propTypes = {
   theme: PropTypes.shape({
-    pallete: PropTypes.object.isRequired,
+    palette: PropTypes.object.isRequired,
     type: PropTypes.string.isRequire,
   }).isRequired,
   children: PropTypes.node.isRequired,

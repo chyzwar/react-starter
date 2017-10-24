@@ -17,7 +17,6 @@ module.exports = webpackMerge(commonConfig, {
    */
   entry: {
     reactHotLoaderPath: 'react-hot-loader/patch',
-    container: './src/container.js',
   },
   /**
    * DevServer Configuration
@@ -54,28 +53,10 @@ module.exports = webpackMerge(commonConfig, {
      */
     new HtmlWebpackPlugin({
       title: 'React Starter Application',
-      template: 'src/templates/main.html',
-      filename: 'main.html',
-      excludeChunks: ['container'],
+      template: 'src/templates/index.html',
+      filename: 'index.html',
       chunksSortMode: 'manual',
       chunks: ['reactHotLoaderPath', 'main'],
-      minify: {
-        collapseWhitespace: false,
-        removeComments: false,
-      },
-    }),
-    /**
-     * HtmlWebpackPlugin configuration
-     *
-     * @see https://webpack.js.org/plugins/html-webpack-plugin/
-     */
-    new HtmlWebpackPlugin({
-      title: 'React Starter Container',
-      template: 'src/templates/container.html',
-      filename: 'index.html',
-      excludeChunks: ['main'],
-      chunksSortMode: 'manual',
-      chunks: ['reactHotLoaderPath', 'container'],
       minify: {
         collapseWhitespace: false,
         removeComments: false,

@@ -65,6 +65,7 @@
     "babel-polyfill": "next",
     "connected-react-router": "4.x.x",
     "history": "4.x.x",
+    "theming": "1.x.x",
     "normalize.css": "7.x.x",
     "prop-types": "15.x.x",
     "react": "16.x.x",

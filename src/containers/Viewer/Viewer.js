@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { connect } from 'react-redux';
-import Header from 'components/Header/Header';
+import Header from '../../components/Header/Header';
 
 class Viewer extends React.Component {
   constructor(props) {

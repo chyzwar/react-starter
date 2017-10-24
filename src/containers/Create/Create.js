@@ -2,9 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { connect } from 'react-redux';
-import { addTodo } from 'actions/TodoActions';
-
-import Header from 'components/Header/Header';
+import { addTodo } from '../../actions/TodoActions';
+import Header from '../../components/Header/Header';
 
 class Create extends React.Component {
   constructor(props) {

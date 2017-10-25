@@ -1,6 +1,6 @@
 
 /* eslint "quote-props": "off" */
-const DefaultTheme = {
+const BlueTheme = {
   direction: 'ltr',
   palette: {
     common: {
@@ -348,4 +348,4 @@ const DefaultTheme = {
   },
 };
 
-export default DefaultTheme;
+export default BlueTheme;

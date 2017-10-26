@@ -1,14 +1,34 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import injectSheet from 'react-jss';
 import { Link } from 'react-router-dom';
+import ThemeSwitch from '../ThemeSwitch/ThemeSwitch';
 
-const Header = () =>
+const styles = ({ palette }) => ({
+  nav: {
+    background: palette.primary[500],
+    display: 'flex',
+    height: '30px',
+  },
+  link: {
+    margin: '5px',
+  },
+});
+
+const Header = ({ classes }) =>
   (
-    <ul>
-      <li><Link to="/">Home</Link></li>
-      <li><Link to="/create">Create</Link></li>
-      <li><Link to="/topics">Topics</Link></li>
-    </ul>
+    <nav className={classes.nav}>
+      <Link className={classes.link} to="/">Home</Link>
+      <Link className={classes.link} to="/create">Create</Link>
+      <Link className={classes.link} to="/topics">Topics</Link>
+      <ThemeSwitch />
+    </nav>
   );
 
+Header.propTypes = {
+  classes: PropTypes.shape({
+    nav: PropTypes.string,
+  }).isRequired,
+};
 
-export default Header;
+export default injectSheet(styles)(Header);

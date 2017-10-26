@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+
 import { connect } from 'react-redux';
-import { changeTheme }from 'actions/Theme/changeTheme';
+import { changeTheme } from 'actions/ThemeActions';
 
 
 const ThemeSwitch = props => (

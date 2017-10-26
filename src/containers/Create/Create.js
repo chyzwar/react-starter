@@ -1,15 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { connect } from 'react-redux';
 import injectSheet from 'react-jss';
-import { addTodo } from '../../actions/TodoActions';
-import Header from '../../components/Header/Header';
-import ThemeSwitch from '../Theming/ThemeSwitch';
+import { connect } from 'react-redux';
+import { addTodo } from 'actions/TodoActions';
+import Header from 'components/Header/Header';
 
 const styles = ({ palette }) => ({
   page: {
-    background: palette.primary[500],
+    background: palette.primary[150],
   },
   button: {
     background: palette.primary[50],
@@ -58,7 +57,6 @@ class Create extends React.Component {
 
     return (
       <div className={page}>
-        <ThemeSwitch />
         <Header />
         <h1> Create Todo </h1>
         <form onSubmit={this.onSubmit}>

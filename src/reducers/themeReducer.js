@@ -1,9 +1,13 @@
-import DefaultTheme from '../constants/DefaultTheme';
-import { CHANGE_THEME } from '../constants/ActionTypes';
+import BlueTheme from 'constants/BlueTheme';
+import TealTheme from 'constants/TealTheme';
 
-function themeReducer(state = DefaultTheme, action) {
+import { CHANGE_THEME } from 'constants/ActionTypes';
+
+function themeReducer(state = BlueTheme, action) {
   switch (action.type) {
     case CHANGE_THEME:
+      if (action.name === 'teal') return TealTheme;
+      if (action.name === 'blue') return BlueTheme;
       return state;
     default:
       return state;

@@ -1,12 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { connect } from 'react-redux';
 import injectSheet from 'react-jss';
-import { addTodo } from '../../actions/TodoActions';
-import Header from '../../components/Header/Header';
+import { connect } from 'react-redux';
+import { addTodo } from 'actions/TodoActions';
+import Header from 'components/Header/Header';
 
 const styles = ({ palette }) => ({
+  page: {
+    background: palette.primary[150],
+  },
   button: {
     background: palette.primary[50],
   },
@@ -47,12 +50,13 @@ class Create extends React.Component {
   render() {
     const {
       classes: {
+        page,
         button,
       },
     } = this.props;
 
     return (
-      <div>
+      <div className={page}>
         <Header />
         <h1> Create Todo </h1>
         <form onSubmit={this.onSubmit}>
@@ -80,6 +84,5 @@ const mapDispatchToProps = dispatch => ({
   },
 });
 
-const StyledCreate = injectSheet(styles)(Create);
 
-export default connect(undefined, mapDispatchToProps)(StyledCreate);
+export default connect(null, mapDispatchToProps)(injectSheet(styles)(Create));

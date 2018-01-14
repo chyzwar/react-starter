@@ -70,22 +70,11 @@ module.exports = {
         ],
       },
       {
-        test: /\.scss$/,
-        use: [
-          { loader: 'raw-loader' },
-          { loader: 'sass-loader' },
-        ],
-      },
-      {
         test: /\.css$/,
         use: [
           'style-loader',
           'css-loader',
         ],
-      },
-      {
-        test: /\.html$/,
-        loader: 'html-loader',
       },
       {
         test: /\.eot$/,

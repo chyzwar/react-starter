@@ -4,7 +4,8 @@ const webpackMerge = require('webpack-merge');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const FlowWebpackPlugin = require('flow-webpack-plugin');
-const commonConfig = require('./common.js');
+
+const commonConfig = require('./webpack.common.js');
 
 /**
  * Merge common config with prod specific configuration

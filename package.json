@@ -4,12 +4,14 @@
   "description": "",
   "main": "main.js",
   "scripts": {
-    "start": "webpack-dev-server --config ./webpack/dev",
-    "start:prod": "webpack-dev-server --config ./webpack/prod",
-    "build": "webpack --config ./webpack/prod -p",
-    "build:watch": "webpack --config ./webpack/prod -p --watch",
-    "flow": "flow check",
-    "eslint": "eslint"
+    "start": "webpack-dev-server --config ./webpack.dev",
+    "start:prod": "webpack-dev-server --config ./webpack.prod",
+
+    "build": "webpack --config ./webpack.prod",
+    "build:watch": "webpack --config ./webpack.prod --watch",
+
+    "eslint": "eslint src",
+    "eslint:fix": "eslint src --fix"
   },
   "keywords": [
     "starter",
@@ -22,46 +24,44 @@
   "license": "MIT",
   "repository": "https://github.com/chyzwar/react-starter",
   "devDependencies": {
-    "eslint": "4.9.x",
+    "babel-eslint": "*",
+    "eslint": "4.x.x",
     "eslint-config-airbnb": "16.x.x",
     "eslint-plugin-flowtype": "2.x.x",
     "eslint-plugin-react": "7.x.x",
     "eslint-plugin-jsx-a11y": "6.x.x",
     "eslint-plugin-import": "2.7.x",
     "eslint-import-resolver-webpack": "0.x.x",
+
     "babel-loader": "*",
-    "html-loader": "*",
-    "node-sass": "*",
-    "raw-loader": "*",
     "css-loader": "*",
-    "sass-loader": "*",
-    "script-loader": "*",
     "style-loader": "*",
     "url-loader": "*",
-    "file-loader": "*",
     "eslint-loader": "*",
     "webpack": "3.x.x",
     "webpack-merge": "4.x.x",
     "webpack-dev-server": "2.x.x",
     "html-webpack-plugin": "2.x.x",
     "clean-webpack-plugin": "0.x.x",
-    "extract-text-webpack-plugin": "3.x.x",
     "webpack-bundle-analyzer": "2.x.x",
-    "flow-bin": "0.57.3",
+
+    "flow-bin": "0.63.x",
     "flow-webpack-plugin": "1.x.x",
-    "jest": "21.x.x",
+
+    "jest": "22.x.x",
     "enzyme": "3.x.x",
-    "babel-core": "next",
-    "babel-eslint": "8.x.x",
-    "babel-preset-env": "next",
-    "babel-preset-flow": "next",
-    "babel-preset-react": "next"
+    "enzyme-adapter-react-16": "1.x.x",
+
+    "@babel/core": "*",
+    "@babel/preset-env": "*",
+    "@babel/preset-flow": "*",
+    "@babel/preset-react": "*"
   },
   "dependencies": {
-    "babel-polyfill": "next",
+    "material-ui": "next",
+    "@babel/polyfill": "*",
     "connected-react-router": "4.x.x",
     "history": "4.x.x",
-    "normalize.css": "7.x.x",
     "prop-types": "15.x.x",
     "react": "16.x.x",
     "react-dom": "16.x.x",

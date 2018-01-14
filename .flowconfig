@@ -1,13 +1,14 @@
 [ignore]
+.*/build/*
+.*/covreage/*
+.*/node_modules/*
+
+[untyped]
 .*/src/config/*
 .*/src/store/*
 .*/src/reducers/*
 .*/src/containers/*
 .*/src/main.js
-
-.*/build/*
-.*/webpack/*
-.*/node_modules/*
 
 [libs]
 ./flow-typed/*

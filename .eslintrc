@@ -50,7 +50,7 @@
       "onlyFilesWithFlowAnnotation": false
     },
     "import/resolver": {
-      "webpack": { "config": "webpack.common.js" }
+      "webpack": { "config": "./webpack.common.js" }
     }
   }
 }

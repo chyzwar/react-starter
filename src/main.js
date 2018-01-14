@@ -1,10 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+import Root from 'containers/Root';
+import configureStore from 'store/configureStore';
 import history from './history';
-import Root from './containers/Root';
-import configureStore from './store/configureStore';
 
+/**
+ * Create an redux store
+ *
+ * @type {Store}
+ */
 const store = configureStore();
 
 const render = (Component: Component) => {

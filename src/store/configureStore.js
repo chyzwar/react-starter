@@ -3,7 +3,7 @@
 function configureStore(initState: ?Object) {
   switch (process.env.NODE_ENV) {
     case 'production':
-      return require('./configureStore.prod').default(initS: ?Objecttate);
+      return require('./configureStore.prod').default(initState);
 
     case 'development':
       return require('./configureStore.dev').default(initState);

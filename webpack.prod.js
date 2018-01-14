@@ -37,7 +37,7 @@ module.exports = webpackMerge(commonConfig, {
      * @see https://github.com/johnagan/clean-webpack-plugin
      */
     new CleanWebpackPlugin(
-      ['build'],
+      ['build', 'coverage'],
       { root: path.resolve(), verbose: true },
     ),
     /**
@@ -47,7 +47,7 @@ module.exports = webpackMerge(commonConfig, {
      */
     new HtmlWebpackPlugin({
       title: 'React Starter',
-      template: 'src/templates/main.html',
+      template: 'src/main.html',
       filename: 'index.html',
       chunkSortMode: 'manual',
       chunks: ['common', 'main'],
@@ -110,7 +110,9 @@ module.exports = webpackMerge(commonConfig, {
      * @see https://webpack.js.org/plugins/define-plugin/
      */
     new webpack.DefinePlugin({
-      NODE_ENV: JSON.stringify('production'),
+      'process.env': {
+        NODE_ENV: JSON.stringify('production'),
+      },
     }),
   ],
 });

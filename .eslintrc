@@ -1,6 +1,4 @@
-const path = require('path');
-
-module.exports = {
+{
   "parser": "babel-eslint",
   "env": {
     "browser": true,
@@ -27,7 +25,6 @@ module.exports = {
   ],
 
   "rules": {
-    "import/no-dynamic-require": ["off"],
     "global-require": ["off"],
     "react/jsx-filename-extension": ["off"],
     "jsx-a11y/anchor-is-valid": ["off"],
@@ -37,7 +34,7 @@ module.exports = {
     "flowtype/define-flow-type": ["warn"],
     "flowtype/generic-spacing": [ "error", "never"],
     "flowtype/no-primitive-constructor-types": "error",
-    "flowtype/no-weak-types": ["error"],
+    "flowtype/no-weak-types": ["off"],
     "flowtype/object-type-delimiter": [ "error","comma"],
     "flowtype/require-valid-file-annotation": "error",
     "flowtype/semi": ["error", "always"],
@@ -53,7 +50,7 @@ module.exports = {
       "onlyFilesWithFlowAnnotation": false
     },
     "import/resolver": {
-      "node": { "paths": [path.resolve(__dirname, 'src')] }
+      "webpack": { "config": "webpack.common.js" }
     }
   }
 }

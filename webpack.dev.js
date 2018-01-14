@@ -53,7 +53,7 @@ module.exports = webpackMerge(commonConfig, {
      */
     new HtmlWebpackPlugin({
       title: 'React Starter Application',
-      template: 'src/templates/index.html',
+      template: 'src/index.html',
       filename: 'index.html',
       chunksSortMode: 'manual',
       chunks: ['reactHotLoaderPath', 'main'],
@@ -70,7 +70,6 @@ module.exports = webpackMerge(commonConfig, {
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: JSON.stringify('development'),
-        CONFIG_NAME: JSON.stringify('dev'),
       },
     }),
   ],

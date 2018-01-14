@@ -10,7 +10,7 @@ module.exports = {
    */
   entry: {
     /**
-     * Angualar Application main entry point
+     * Application main entry point
      */
     main: './src/main.js',
   },

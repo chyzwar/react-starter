@@ -1,17 +1,18 @@
 {
   "presets": [
-    ["env", {
+    ["@babel/preset-env", {
       "modules": false,
       "targets": {
         "chrome": 52,
         "ie": 11,
-        "firefox": 50
+        "firefox": 50,
+        "safari": 11
       },
       "useBuiltIns": "usage",
       "shippedProposals": true
     }],
-    "react",
-    "flow"
+    "@babel/preset-react",
+    "@babel/preset-flow"
   ],
   "plugins": [
     "react-hot-loader/babel"

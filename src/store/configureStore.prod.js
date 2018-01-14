@@ -8,7 +8,6 @@ import history from '../history';
 import routerMiddleware from '../middleware/routerMiddleware';
 import loggerMiddleware from '../middleware/loggerMiddleware';
 import todosReducer from '../reducers/todosReducer';
-import configReducer from '../reducers/configReducer';
 import themeReducer from '../reducers/themeReducer';
 
 const middlewares = applyMiddleware(
@@ -18,13 +17,12 @@ const middlewares = applyMiddleware(
 
 const reducers = combineReducers({
   todos: todosReducer,
-  config: configReducer,
   theme: themeReducer,
 });
 
 const enhancers = compose(middlewares);
 
-function configureStore(initialState = {}) {
+function configureStore(initialState: Object = {}) {
   return createStore(
     connectRouter(history)(reducers),
     initialState,

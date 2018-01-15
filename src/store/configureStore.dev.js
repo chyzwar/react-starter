@@ -5,7 +5,7 @@ import createStore from 'redux/lib/createStore';
 import { connectRouter } from 'connected-react-router';
 import { composeWithDevTools } from 'redux-devtools-extension';
 
-import browserHistory from 'browserHistory';
+import history from 'constants/History';
 import routerMiddleware from 'middleware/routerMiddleware';
 import loggerMiddleware from 'middleware/loggerMiddleware';
 import todosReducer from 'reducers/todosReducer';
@@ -25,7 +25,7 @@ const enhancers = composeWithDevTools(middlewares);
 
 function configureStore(initialState: Object = {}) {
   return createStore(
-    connectRouter(browserHistory)(reducers),
+    connectRouter(history)(reducers),
     initialState,
     enhancers,
   );

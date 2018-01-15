@@ -66,6 +66,7 @@
     "@babel/preset-react": "*"
   },
   "dependencies": {
+    "axios": "*",
     "material-ui": "next",
     "connected-react-router": "4.x.x",
     "history": "4.x.x",

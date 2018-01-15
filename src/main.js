@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 
 import Root from 'containers/Root';
 import configureStore from 'store/configureStore';
-import history from 'browserHistory';
+import history from 'constants/History';
 
 /**
  * Create an redux store

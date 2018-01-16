@@ -53,9 +53,9 @@
 
     "flow-bin": "0.63.x",
     "flow-webpack-plugin": "1.x.x",
+
     "jest": "22.x.x",
     "babel-jest": "*",
-
     "enzyme": "3.x.x",
     "enzyme-adapter-react-16": "1.x.x",
 

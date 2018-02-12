@@ -12,7 +12,7 @@ import history from 'constants/History';
  */
 const store = configureStore();
 
-const render = (Component: Component) => {
+const render = (Component: React.Component) => {
   ReactDOM.render(
     <Component
       store={store}

@@ -13,7 +13,7 @@ const Theming = ({ theme, children }) => (
 Theming.propTypes = {
   theme: PropTypes.shape({
     palette: PropTypes.object.isRequired,
-    type: PropTypes.string.isRequire,
+    type: PropTypes.string.isRequired,
   }).isRequired,
   children: PropTypes.node.isRequired,
 };

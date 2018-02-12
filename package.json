@@ -6,16 +6,12 @@
   "scripts": {
     "start": "webpack-dev-server --config webpack.dev",
     "start:prod": "webpack-dev-server --config webpack.prod",
-
     "build": "webpack --config webpack.prod",
     "build:watch": "webpack --config webpack.prod --watch",
-
     "eslint": "eslint src",
     "eslint:fix": "eslint src --fix",
-
     "flow": "flow check",
     "flow:coverage": "flow coverage",
-
     "test": "jest",
     "test:coverage": "jest --coverage"
   },
@@ -38,7 +34,6 @@
     "eslint-plugin-jsx-a11y": "6.x.x",
     "eslint-plugin-import": "2.7.x",
     "eslint-import-resolver-webpack": "0.x.x",
-
     "babel-loader": "next",
     "css-loader": "*",
     "style-loader": "*",
@@ -50,15 +45,12 @@
     "html-webpack-plugin": "2.x.x",
     "clean-webpack-plugin": "0.x.x",
     "webpack-bundle-analyzer": "2.x.x",
-
     "flow-bin": "0.63.x",
     "flow-webpack-plugin": "1.x.x",
-
     "jest": "22.x.x",
     "babel-jest": "*",
     "enzyme": "3.x.x",
     "enzyme-adapter-react-16": "1.x.x",
-
     "@babel/polyfill": "*",
     "@babel/core": "*",
     "@babel/preset-env": "*",
